@@ -1,15 +1,10 @@
 image:
   file: .gitpod/.gitpod.Dockerfile
 
-# ddev and composer are running as part of the prebuild
-# when starting a workspace all docker images are ready
 tasks:
-  - name: ddev
-    prebuild: |
-      sudo cp .gitpod/gitpod-setup-ddev.sh /usr/local/bin/.
-    command: |
-      sudo cp .gitpod/gitpod-setup-ddev.sh /usr/local/bin/.
-      echo "System is ready, clone a project, `ddev config` if needed, and `gitpod-setup-ddev` to run it"
+  - name: tinker browser terminal  
+    before: |
+      echo "maybe before key can show even at browser terminal?"
 
 # Set the following ports public
 ports:
